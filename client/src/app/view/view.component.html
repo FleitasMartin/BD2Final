@@ -1,0 +1,34 @@
+<table mat-table [dataSource]="approvalRules" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="Id">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="matterCode">
+    <th mat-header-cell *matHeaderCellDef> Codigo de materia </th>
+    <td mat-cell *matCellDef="let element"> {{element.matterCode}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="season">
+    <th mat-header-cell *matHeaderCellDef> Semestre </th>
+    <td mat-cell *matCellDef="let element"> {{element.season}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="year">
+    <th mat-header-cell *matHeaderCellDef> Año </th>
+    <td mat-cell *matCellDef="let element"> {{element.year}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="options">
+    <th mat-header-cell *matHeaderCellDef> Opciones </th>
+    <td mat-cell *matCellDef="let element">
+      <mat-icon title="editar" (click)="edit(element.id)" color="primary">edit</mat-icon>
+      <mat-icon title="eliminar" (click)="openDialog(element.id)" color="primary">delete</mat-icon>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
