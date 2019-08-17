@@ -1,0 +1,17 @@
+<configuration>
+	
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>
+				%date{"yyyy-MM-dd'T'HH:mm:ss,SSSXXX", UTC} %-5level [%thread] %logger{55} \(%line\)- %msg %n
+			</pattern>
+		</encoder>
+	</appender>
+	
+	<logger name="edu.ar" level="INFO" />
+	
+	<root level="INFO">
+		<appender-ref ref="console"/>
+	</root>
+	
+</configuration>
